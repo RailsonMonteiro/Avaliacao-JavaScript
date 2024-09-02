@@ -1,0 +1,42 @@
+<!-- Fazer um programa que tenha dentro de uma repetição a entrada de um valor numérico através de prompt
+  cada valor que entrar deve ser somado aos outros valores. Repetir até que o usuário informe um valor 
+  menor ou igual a zero. Ao término da repetição mostrar a soma dos números informados.  -->
+
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Números</title>
+</head>
+<body>
+
+    <h1>Programa de Soma de Números</h1>
+    <p id="resultado"></p>
+
+    <script>
+        function somarNumeros() {
+            let soma = 0;
+            let valor;
+
+            do {
+                // Solicita ao usuário um valor numérico
+                valor = parseFloat(prompt("Digite um valor numérico (ou um valor menor ou igual a 0 para terminar):"));
+
+                // Se o valor for maior que 0, soma ao total
+                if (valor > 0) {
+                    soma += valor;
+                }
+
+            } while (valor > 0); // Repete enquanto o valor for maior que 0
+
+            // Exibe o resultado da soma
+            document.getElementById("resultado").textContent = "A soma dos números informados é: " + soma;
+        }
+
+        // Executa a função quando a página é carregada
+        somarNumeros();
+    </script>
+
+</body>
+</html>

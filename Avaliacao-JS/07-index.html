@@ -1,0 +1,40 @@
+<!-- Criar um texto com um parágrafo e um botão para esconder esse parágrafo.
+  Usar a alteração do estilo :”display: none”; -->
+
+
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mostrar/Esconder Parágrafo</title>
+  </head>
+  <body>
+  
+      <h1>Exemplo de Parágrafo</h1>
+  
+      <!-- Parágrafo que será escondido/mostrado -->
+      <p id="meuParagrafo">Este é um parágrafo que pode ser escondido ou mostrado ao clicar no botão abaixo.</p>
+  
+      <!-- Botão para esconder ou mostrar o parágrafo -->
+      <button onclick="alternarParagrafo()">Esconder Parágrafo</button>
+  
+      <script>
+          function alternarParagrafo() {
+              // Obtém o parágrafo pelo ID
+              let paragrafo = document.getElementById("meuParagrafo");
+              
+              // Verifica o estilo atual do parágrafo e alterna entre esconder e mostrar
+              if (paragrafo.style.display === "none") {
+                  paragrafo.style.display = "block"; // Mostra o parágrafo
+                  document.querySelector("button").textContent = "Esconder Parágrafo"; // Muda o texto do botão
+              } else {
+                  paragrafo.style.display = "none"; // Esconde o parágrafo
+                  document.querySelector("button").textContent = "Mostrar Parágrafo"; // Muda o texto do botão
+              }
+          }
+      </script>
+  
+  </body>
+  </html>
+  

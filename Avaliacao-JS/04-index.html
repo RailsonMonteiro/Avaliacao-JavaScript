@@ -1,0 +1,50 @@
+<!-- Criar um programa que tenha um campo (input) para entrada de um valor e um botão 
+ “Verificar” ao ser clicado deve informar se foi informado algum valor, se ele é menor 
+ que zero, zero ou maior que zero.  -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Valor</title>
+</head>
+<body>
+
+    <h1>Verificar Valor</h1>
+
+    <!-- Campo para entrada do valor -->
+    <input type="number" id="valorInput" placeholder="Digite um valor">
+
+    <!-- Botão para verificar o valor -->
+    <button onclick="verificarValor()">Verificar</button>
+
+    <!-- Div onde o resultado será exibido -->
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <script>
+        function verificarValor() {
+            // Obtém o valor do input
+            let valor = document.getElementById("valorInput").value;
+
+            // Verifica se o valor foi informado
+            if (valor === "") {
+                document.getElementById("resultado").textContent = "Por favor, insira um valor.";
+            } else {
+                // Converte o valor para número
+                valor = parseFloat(valor);
+
+                // Verifica se é menor que zero, igual a zero, ou maior que zero
+                if (valor < 0) {
+                    document.getElementById("resultado").textContent = "O valor é menor que zero.";
+                } else if (valor === 0) {
+                    document.getElementById("resultado").textContent = "O valor é zero.";
+                } else {
+                    document.getElementById("resultado").textContent = "O valor é maior que zero.";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

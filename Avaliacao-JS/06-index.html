@@ -1,0 +1,36 @@
+<!-- Faça um programa que permita a entrada de um texto em um textarea e um input que vai 
+ mostrando o número de caracteres digitados no textarea, a cada alteração do textarea.  -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Caracteres</title>
+</head>
+<body>
+
+    <h1>Contador de Caracteres</h1>
+
+    <!-- Textarea para entrada do texto -->
+    <textarea id="textoInput" placeholder="Digite seu texto aqui..." rows="5" cols="40"></textarea>
+
+    <!-- Campo para exibir o número de caracteres -->
+    <p>Caracteres: <input type="text" id="contador" readonly></p>
+
+    <script>
+        // Função para contar os caracteres
+        function contarCaracteres() {
+            // Obtém o valor do textarea
+            let texto = document.getElementById("textoInput").value;
+
+            // Atualiza o campo de contador com o número de caracteres
+            document.getElementById("contador").value = texto.length;
+        }
+
+        // Adiciona um evento ao textarea para contar os caracteres a cada alteração
+        document.getElementById("textoInput").addEventListener("input", contarCaracteres);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Criar uma aplicação que contenha uma imagem e ao passar o mouse sobre essa imagem alterar 
+ para outra imagem. Ao retirar o mouse de cima  retornar a imagem anterior. -->
+
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar Imagem ao Passar o Mouse</title>
+</head>
+<body>
+
+    <h1>Imagem com Efeito de Hover</h1>
+
+    <!-- Imagem que será alterada ao passar o mouse -->
+    <img id="imagem" width="48" height="48" src="https://img.icons8.com/fluency/48/google-logo.png" alt="Imagem Original" width="300">
+
+    <script>
+        // Função para trocar a imagem ao passar o mouse
+        function trocarImagem() {
+            document.getElementById("imagem").src = "https://img.icons8.com/fluency/48/chrome.png"; // Nova imagem
+        }
+
+        // Função para restaurar a imagem original ao retirar o mouse
+        function restaurarImagem() {
+            document.getElementById("imagem").src = "https://img.icons8.com/fluency/48/google-logo.png"; // Imagem original
+        }
+
+        // Adiciona os eventos de mouseover e mouseout à imagem
+        document.getElementById("imagem").addEventListener("mouseover", trocarImagem);
+        document.getElementById("imagem").addEventListener("mouseout", restaurarImagem);
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!-- Faça um programa que solicite um número. Após isso, o programa deve informar 
+ todos os números ímpares entre 0 e o número informado.  -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Ímpares</title>
+</head>
+<body>
+
+    <h1>Exibir Números Ímpares</h1>
+
+    <!-- Campo para entrada do número -->
+    <input type="number" id="numeroInput" placeholder="Digite um número">
+
+    <!-- Botão para exibir os números ímpares -->
+    <button onclick="exibirImpares()">Exibir Ímpares</button>
+
+    <!-- Div onde os números ímpares serão exibidos -->
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <script>
+        function exibirImpares() {
+            // Obtém o valor do input
+            let numero = parseInt(document.getElementById("numeroInput").value);
+
+            // Verifica se o valor foi informado
+            if (isNaN(numero)) {
+                document.getElementById("resultado").textContent = "Por favor, insira um número válido.";
+            } else {
+                // Inicializa uma variável para armazenar os números ímpares
+                let impares = [];
+
+                // Loop para encontrar os números ímpares entre 0 e o número informado
+                for (let i = 1; i <= numero; i++) {
+                    if (i % 2 !== 0) {
+                        impares.push(i);
+                    }
+                }
+
+                // Exibe os números ímpares na div
+                document.getElementById("resultado").textContent = "Números ímpares entre 0 e " + numero + ": " + impares.join(", ");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- Fazer uma aplicação que contenha um Input para entrada de um Frase e um div para
+  exibir a frase e um botão chamado “Copiar”. Ao ser clicado deve  copiar a frase de 
+  dentro do input para dentro do Div.  -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Frase</title>
+</head>
+<body>
+
+    <h1>Copiar Frase para Div</h1>
+
+    <!-- Input para a frase -->
+    <input type="text" id="fraseInput" placeholder="Digite sua frase aqui">
+
+    <!-- Botão para copiar a frase -->
+    <button onclick="copiarFrase()">Copiar</button>
+
+    <!-- Div onde a frase será exibida -->
+    <div id="fraseExibida" style="margin-top: 20px; padding: 10px; border: 1px solid #000;"></div>
+
+    <script>
+        function copiarFrase() {
+            // Obtém o valor do input
+            let frase = document.getElementById("fraseInput").value;
+            
+            // Exibe a frase na div
+            document.getElementById("fraseExibida").textContent = frase;
+        }
+    </script>
+
+</body>
+</html>
