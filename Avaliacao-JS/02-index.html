@@ -1,48 +1,59 @@
 <!-- Criar uma página que permita a entrada de dois números inteiros através de um prompt, -->
 <!-- os armazene em variáveis e depois escreva o número maior.  -->
 
+<!-- Criar uma página que permita a entrada de dois números inteiros através de um prompt, -->
+<!-- os armazene em variáveis e depois escreva o número maior.  -->
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparar Números</title>
+    <title>Comparador de Números</title>
+    <style>
+        
+    </style>
 </head>
 <body>
 
-    <h1>Comparar Dois Números Inteiros</h1>
+    <h1>Comparador de Números</h1>
 
-    <!-- Botão para iniciar a comparação -->
-    <button onclick="compararNumeros()">Comparar Números</button>
-
-    <!-- Div para exibir o resultado -->
-    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+    <!-- Div para exibir os resultados -->
+    <p id="resultado" style="margin-top: 20px; padding: 10px; border: 1px solid #000;"></p>
 
     <script>
+        // Função para solicitar os números e compará-los
         function compararNumeros() {
-            // Solicita a entrada de dois números inteiros
-            let numero1 = parseInt(prompt("Digite o primeiro número inteiro:"));
-            let numero2 = parseInt(prompt("Digite o segundo número inteiro:"));
+            // Solicita a entrada do primeiro número
+            let primeiroNumero = parseInt(prompt("Digite o primeiro número inteiro:"));
+            // Solicita a entrada do segundo número
+            let segundoNumero = parseInt(prompt("Digite o segundo número inteiro:"));
 
-            // Verifica se os valores são válidos
-            if (isNaN(numero1) || isNaN(numero2)) {
-                document.getElementById("resultado").textContent = "Por favor, insira números inteiros válidos.";
-                return;
+            // Verifica se os números são válidos
+            if (isNaN(primeiroNumero) || isNaN(segundoNumero)) {
+                document.getElementById("resultado").textContent = "Por favor, insira números válidos.";
+                return; // Sai da função se os números não forem válidos
             }
 
-            // Compara os números e exibe o maior
-            let maior;
-            if (numero1 > numero2) {
-                maior = numero1;
-            } else if (numero2 > numero1) {
-                maior = numero2;
+            // Exibe os números digitados
+            let mensagem = `Você digitou: ${primeiroNumero} e ${segundoNumero}. `;
+
+            // Compara os números e determina qual é maior
+            if (primeiroNumero > segundoNumero) {
+                mensagem += `${primeiroNumero} é maior que ${segundoNumero}.`;
+            } else if (segundoNumero > primeiroNumero) {
+                mensagem += `${segundoNumero} é maior que ${primeiroNumero}.`;
             } else {
-                maior = "ambos são iguais";
+                mensagem += `Os números são iguais.`;
             }
 
-            // Exibe o resultado na div
-            document.getElementById("resultado").textContent = "O maior número é: " + maior;
+            // Exibe a mensagem na div
+            document.getElementById("resultado").textContent = mensagem;
         }
+
+        // Chama a função para comparar os números
+        compararNumeros();
     </script>
 
 </body>
